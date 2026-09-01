@@ -49,3 +49,19 @@ Contribuições são bem-vindas. Consulte o [guia de contribuição](./contribua
 
 - Código e implementações: [MIT License](LICENSE)
 - Conteúdo educacional: [CC BY-SA 4.0](LICENSE)
+
+## ☕ Apoie o projeto
+
+Todo o conteúdo deste repositório é disponibilizado gratuitamente para estudo e colaboração.
+
+Se este projeto foi útil para você e quiser contribuir financeiramente, considere apoiar seus criadores e mantenedores.
+
+Essa contribuição é **voluntária e não oferece qualquer vantagem sobre outros contribuidores**. É apenas uma forma de reconhecer e incentivar o trabalho de pessoas que dedicam tempo à construção, manutenção e divulgação de material educacional gratuito.
+
+> 🇧🇷 **PIX**
+
+<img src="./pix-qrcode.png" alt="PIX QR Code" width="180" height="180">
+
+Muito obrigado pelo apoio! ❤️
+
+---
