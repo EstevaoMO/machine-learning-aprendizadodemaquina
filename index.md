@@ -44,7 +44,7 @@ Veja como você pode fazer parte deste projeto diretamente e ajudar a desenvolve
 * **Viés vs. Variância:**
   * *Viés (Bias)* / *Variância (Variance)* / *Erro Irredutível*
 * **Metodologias de Validação:** 
-  * Abordagem Treino-Validação-Teste.
+  * *Abordagem Treino-Validação-Teste.*
   * *Cross-Validation*
   * *Curvas de Aprendizado*
 
