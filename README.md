@@ -30,12 +30,11 @@ Cada tópico segue esta organização:
 ```
 tópico/
 ├── README.md          # Conceitos teóricos
-├── MAPA.md            # Guia de aprendizado
+├── GUIA.md            # Guia de aprendizado
 └── colabs/
+    ├── MAPA.md        # Mapa dos notebooks
     └── *.ipynb        # Notebooks práticos
 ```
-
-Os notebooks combinam conceito, intuição, matemática, implementação, experimento e análise.
 
 ## Tecnologias
 
