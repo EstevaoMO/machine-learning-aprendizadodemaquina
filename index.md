@@ -19,13 +19,13 @@ Veja como você pode fazer parte deste projeto diretamente e ajudar a desenvolve
 * **O Processo de Aprendizado**
 * **Abordagem Metodológica (CRISP-DM)**
 * **Grandes Categorias de Problemas**
-  * *Aprendizado Supervisionado:* Uso de variáveis de entrada e uma variável-alvo (rótulo);
-  * *Aprendizado Não-Supervisionado:* Exploração de estruturas e agrupamentos naturais inerentes;
-  * *Aprendizado por Reforço:* Agentes aprendendo num ambiente dinâmico sob recompensas/punições (trade-off exploração vs aproveitamento);
-  * *Aprendizado semi-supervisionado:* Abordagem híbrida para grandes conjuntos com rótulos parciais.
+  * *Aprendizado Supervisionado*
+  * *Aprendizado Não-Supervisionado*
+  * *Aprendizado por Reforço*
+  * *Aprendizado semi-supervisionado*
 * **Tipos de Variáveis e Predição**
-  * Regressão (alvo contínuo);
-  * Classificação (alvo discreto).
+  * *Regressão (alvo contínuo)*
+  * *Classificação (alvo discreto)*
 
 ### Módulo 2: Dados e Pré-processamento (não implementado)
 * **Identificação e Tratamento de Dados Faltantes**
@@ -74,7 +74,7 @@ Veja como você pode fazer parte deste projeto diretamente e ajudar a desenvolve
   * *Instabilidade e alta variância*
 * **O Conceito de Ensemble**
 * **Técnicas baseadas em Bootstrap:**
-  * Amostragem *Bootstrapping* / *Bagging* / *Random Forest*
+  * *Amostragem Bootstrapping* / *Bagging* / *Random Forest*
 * **Algoritmos de Boosting:**
   * *AdaBoost* / *Gradient Boosting* / *XGBoost*
 * **Stacking (Empilhamento)**
