@@ -4,6 +4,8 @@ Este é um projeto **comunitário e colaborativo**, criado para reunir materiais
 
 Estudantes, professores e profissionais são convidados a contribuir, independentemente do nível de experiência. Uma contribuição não precisa ser grande: uma correção, uma referência, uma explicação melhor ou um novo experimento já pode ajudar outras pessoas a aprender.
 
+> **Para colaborar com novos tópicos e implementações, consulte a [ementa do curso](./index.md) e veja o que ainda falta para ser feito.**
+
 ## 🤝 Sobre o projeto
 
 O projeto está em constante construção. Correções de erros conceituais, fórmulas incorretas, bugs, melhorias de implementação, novos algoritmos, projetos e refinamentos dos materiais são extremamente bem-vindos.
