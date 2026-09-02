@@ -6,7 +6,7 @@
 
 Uma trilha estruturada e prática para aprender Machine Learning em português. Combina teoria sólida, implementação com código e aplicação prática.
 
-[Consulte o mapa completo de estudos](./index.md)
+[Consulte o mapa completo de estudos](./docs/index.md)
 
 ## Conteúdo
 
@@ -27,13 +27,20 @@ O projeto cobre os principais fundamentos de Machine Learning, progredindo até 
 
 Cada tópico segue esta organização:
 
+Na raiz do projeto:
+
 ```
 tópico/
 ├── README.md          # Conceitos teóricos
-├── GUIA.md            # Guia de aprendizado
 └── colabs/
     ├── MAPA.md        # Mapa dos notebooks
     └── *.ipynb        # Notebooks práticos
+```
+
+Dentro de `docs/`:
+```
+_tópico/
+├── GUIA.md          # Aula guiada e estruturada
 ```
 
 ## Tecnologias
@@ -42,7 +49,7 @@ Python | NumPy | Pandas | Scikit-learn | SciPy | Matplotlib | Seaborn | Jupyter 
 
 ## Contribuindo
 
-Contribuições são bem-vindas. Consulte o [guia de contribuição](./contribua.md) para detalhes.
+Contribuições são bem-vindas. Consulte o [guia de contribuição](./docs/contribua.md) para detalhes.
 
 ## Licença
 

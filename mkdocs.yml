@@ -1,0 +1,15 @@
+site_name: Guia de Aprendizado de Máquina | Machine Learning
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: light blue
+  features:
+    - navigation.tabs
+    - toc.integrate
+
+nav:
+  - Início: index.md
+  - Contribua: contribua.md

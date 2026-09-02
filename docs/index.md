@@ -4,17 +4,9 @@ Bem-vindo ao repositório do curso! Este `index.md` servirá como o seu mapa int
 
 ---
 
-## 💬 Saiba Mais
+## **Ementa do Curso**
 
-> **Para contribuir com novos materiais, notebooks, correções e muito mais, consulte o [manual de contribuição](./contribua.md).**
-
-Veja como você pode fazer parte deste projeto diretamente e ajudar a desenvolver uma comunidade bem-intruída de Machine Learning no Brasil, com conteúdos disponibilizados gratuitamente e cada vez mais democratizados na internet.
-
----
-
-## 📚 Ementa do Curso
-
-### [Módulo 1: Fundamentos de ML](./01_fundamentos_de_ml/GUIA.md) (em desenvolvimento)
+### [Módulo 1: Fundamentos de ML](./_01_fundamentos_de_ml/GUIA.md) (em desenvolvimento)
 * **Definição Clássica de ML**
 * **O Processo de Aprendizado**
 * **Abordagem Metodológica (CRISP-DM)**
@@ -89,3 +81,9 @@ Veja como você pode fazer parte deste projeto diretamente e ajudar a desenvolve
 * **Agrupamento Hierárquico**
 
 ---
+
+## **Saiba Mais**
+
+> **Para contribuir com novos materiais, notebooks, correções e muito mais, consulte o [manual de contribuição](./contribua.md).**
+
+Veja como você pode fazer parte deste projeto diretamente e ajudar a desenvolver uma comunidade bem-intruída de Machine Learning no Brasil, com conteúdos disponibilizados gratuitamente e cada vez mais democratizados na internet.

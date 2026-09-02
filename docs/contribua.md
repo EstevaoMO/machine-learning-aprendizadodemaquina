@@ -6,7 +6,7 @@ Estudantes, professores e profissionais são convidados a contribuir, independen
 
 > **Para colaborar com novos tópicos e implementações, consulte a [ementa do curso](./index.md) e veja o que ainda falta para ser feito.**
 
-## 🤝 Sobre o projeto
+## 1. **Sobre o projeto**
 
 O projeto está em constante construção. Correções de erros conceituais, fórmulas incorretas, bugs, melhorias de implementação, novos algoritmos, projetos e refinamentos dos materiais são extremamente bem-vindos.
 
@@ -16,7 +16,7 @@ Contribua com aquilo que você sabe e, principalmente, esteja aberto a aprender 
 
 ---
 
-## 📚 Boas práticas
+## 2. **Boas práticas**
 
 ### Referências e licenças
 
@@ -30,7 +30,7 @@ Ao utilizar materiais externos:
 
 Explicações e resoluções devem, sempre que possível, ser fundamentadas em materiais reconhecidos na academia ou na comunidade técnica.
 
-### Qualidade do conteúdo
+### 3. *Qualidade do conteúdo**
 
 Evite produzir conteúdo excessivamente genérico ou superficial.
 
@@ -44,7 +44,7 @@ Ao criar uma implementação ou projeto, procure compreender:
 
 O objetivo é **entender e explicar o que está sendo feito**.
 
-### Uso de Inteligência Artificial
+### 4. **Uso de Inteligência Artificial**
 
 Ferramentas de Inteligência Artificial podem auxiliar no desenvolvimento das contribuições, especialmente na escrita, revisão, organização e programação.
 
@@ -67,7 +67,7 @@ Nem todos possuem facilidade para escrever textos com excelência. Ferramentas d
 
 ---
 
-## 🌿 Branches
+## 5. **Branches**
 
 A organização de branches deve permanecer simples.
 
@@ -100,11 +100,11 @@ Branches temporárias devem ser removidas após o merge, quando não forem mais 
 
 ---
 
-## 📝 Commits
+## 6. **Commits**
 
 Os commits devem seguir uma estrutura consistente para facilitar o entendimento do histórico, o versionamento e a identificação de alterações.
 
-### Formato
+### **Formato**
 
 ```text
 <tipo>(<escopo>): <descrição>
@@ -134,7 +134,7 @@ A descrição não precisa conter todas as informações sobre a alteração. Us
 | `refat`    | Reorganização ou melhoria estrutural      |
 | `config`   | Alterações de configuração e manutenção   |
 
-### Escopo
+### **Escopo**
 
 Não existem palavras-chave obrigatórias para o escopo.
 
@@ -152,7 +152,7 @@ readme
 
 Observe commits anteriores antes de escolher um novo termo. Quando já existir um padrão estabelecido, procure mantê-lo.
 
-### Idioma
+### **Idioma**
 
 Os commits deste projeto devem ser escritos **preferencialmente em português**.
 
@@ -171,17 +171,19 @@ Ferramentas de Inteligência Artificial podem auxiliar na formulação dos commi
 
 ---
 
-## 📁 Estrutura dos arquivos
+## 7. **Estrutura dos arquivos**
 
 Cada tópico deve seguir, o máximo possível, a estrutura:
 
 ```text
 topico/
 ├── README.md
-├── GUIA.md
 └── colabs/
     ├── MAPA.md
     └── *.ipynb
+
+docs/_topico
+└── GUIA.md
 ```
 
 ### `README.md`
@@ -258,7 +260,7 @@ A estrutura específica do notebook pode variar conforme o objetivo do experimen
 
 ---
 
-## 🔀 Pull Requests
+## 8. **Pull Requests**
 
 Antes de abrir um Pull Request:
 
@@ -273,7 +275,7 @@ Contribuições podem passar por revisão e discussão antes de serem incorporad
 
 ---
 
-## 💬 Dúvidas e sugestões
+## 9. **Dúvidas e sugestões**
 
 Encontrou um problema, possui uma sugestão ou gostaria de discutir uma ideia?
 
