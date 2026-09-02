@@ -1,3 +1,5 @@
 title: Guia de Machine Learning | Aprendizado de Máquina
-description: Um guia completo sobre Machine Learning, abordando conceitos, técnicas e aplicações práticas.
-theme: documentation-theme-jekyll
+description: Ementa interativa e guia de estudos do curso.
+remote_theme: just-the-docs/just-the-docs
+
+search_enabled: true
