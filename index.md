@@ -1,9 +1,3 @@
----
-layout: default
-title: Início
-nav_order: 1
----
-
 # Curso | Aprendizado de Máquina
 
 Bem-vindo ao repositório do curso! Este `index.md` servirá como o seu mapa interativo para dominar os conceitos e práticas de Aprendizado de Máquina, desde os fundamentos metodológicos até os tópicos mais avançados. Siga a ementa abaixo para uma trilha de aprendizado estruturada.
