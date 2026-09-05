@@ -6,18 +6,16 @@ Bem-vindo ao repositório do curso! Este `index.md` servirá como o seu mapa int
 
 ## **Ementa do Curso**
 
-### [Módulo 1: Fundamentos de ML](./_01_fundamentos_de_ml/GUIA.md) (em desenvolvimento)
+### [Módulo 1: Fundamentos de ML](./_01_fundamentos_de_ml/GUIA.md)
 #### Tópicos
-- **Definição Clássica de ML**
+- **Introdução (Definição Clássica)**
 - **O Processo de Aprendizado**
 - **Grandes Categorias de Problemas**
     - Aprendizado Supervisionado
     - Aprendizado Não-Supervisionado
+    - Aprendizado Semi-Supervisionado
     - Aprendizado por Reforço
-    - Aprendizado semi-supervisionado
 - **Tipos de Variáveis e Predição**
-    - Regressão (alvo contínuo)
-    - Classificação (alvo discreto)
 
 ### Módulo 2: Dados e Pré-processamento (não implementado)
 #### Tópicos
