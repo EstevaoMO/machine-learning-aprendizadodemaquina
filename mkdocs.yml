@@ -2,14 +2,46 @@ site_name: Guia de Aprendizado de Máquina | Machine Learning
 
 theme:
   name: material
-  palette:
-    scheme: slate
-    primary: indigo
-    accent: light blue
   features:
     - navigation.tabs
     - toc.integrate
+  palette:
+    # claro
+    - scheme: default
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+
+    # escuro
+    - scheme: slate
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+extra_css:
+  - configs/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - configs/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 nav:
   - Início: index.md
   - Contribua: contribua.md
+  - Curso:
+      - 👋 Bem-vindo: bem_vindo.md
+      - 01. Fundamentos de ML: _01_fundamentos_de_ml/GUIA.md
+      - 02. Pré-processamento de Dados: _02_pre_processamento_de_dados/GUIA.md
+      - 03. Avaliação de Modelos: _03_avaliacao_de_modelos/GUIA.md
+      - 04. Regressão: _04_regressao/GUIA.md
+      - 05. Árvores e Ensembles: _05_arvores_e_ensembles/GUIA.md
+      - 06. Redução de Dimensionalidade: _06_reducao_de_dimensionalidade/GUIA.md
+      - 07. Clustering: _07_clustering/GUIA.md

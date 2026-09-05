@@ -40,8 +40,10 @@ A prática deste módulo possui caráter introdutório, priorizando a **explora�
 
 ## 📖 Materiais de Referência
 
-- [An Introduction to Statistical Learning; Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani](...)
-- [Machine Learning — Stanford / CS229](...)
+- [An Introduction to Statistical Learning; Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani (2013, 2021)](https://www.statlearning.com/)
+- [Conceitos sobre Aprendizade de Máquina; MC Monard, JA Baranauskas (2003)](https://dcm.ffclrp.usp.br/~augusto/publications/2003-sistemas-inteligentes-cap4.pdf)
+- [Machine Learning - IBM](https://www.ibm.com/br-pt/think/topics/machine-learning)
+- [Machine Learning - Zhi-Hua Zhou](https://books.google.com.br/books?id=ctM-EAAAQBAJ&lpg=PR6&ots=o_QpV8RxYr&dq=machine%20learning&lr&pg=PR2#v=onepage&q=machine%20learning&f=false)
 
 ---
 
