@@ -1,0 +1,1225 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../bem_vindo/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Contribua - Guia de Aprendizado de Máquina | Machine Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../configs/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contribua-manual-tecnico" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Guia de Aprendizado de Máquina | Machine Learning" class="md-header__button md-logo" aria-label="Guia de Aprendizado de Máquina | Machine Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guia de Aprendizado de Máquina | Machine Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Contribua
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contribua
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bem_vindo/" class="md-tabs__link">
+          
+  
+  
+  Curso
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Guia de Aprendizado de Máquina | Machine Learning" class="md-nav__button md-logo" aria-label="Guia de Aprendizado de Máquina | Machine Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Guia de Aprendizado de Máquina | Machine Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribua
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribua
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-sobre-o-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Sobre o projeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Boas práticas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Boas práticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#referencias-e-licencas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências e licenças
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-qualidade-do-conteudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Qualidade do conteúdo*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-uso-de-inteligencia-artificial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Uso de Inteligência Artificial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Branches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        main
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches-de-contribuicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branches de contribuição
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Commits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Commits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formato
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escopo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idioma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idioma
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-estrutura-dos-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Estrutura dos arquivos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Estrutura dos arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readmemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        README.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guiamd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GUIA.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colabsmapamd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        colabs/MAPA.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipynb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        *.ipynb
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Pull Requests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-duvidas-e-sugestoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Dúvidas e sugestões
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curso
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curso
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bem_vindo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Bem-vindo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_01_fundamentos_de_ml/GUIA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Fundamentos de ML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_02_pre_processamento_de_dados/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Pré-processamento de Dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_03_avaliacao_de_modelos/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Avaliação de Modelos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_04_regressao/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Regressão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_05_arvores_e_ensembles/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Árvores e Ensembles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_06_reducao_de_dimensionalidade/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Redução de Dimensionalidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_07_clustering/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Clustering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="contribua-manual-tecnico">Contribua | Manual Técnico</h1>
+<p>Este é um projeto <strong>comunitário e colaborativo</strong>, criado para reunir materiais gratuitos de estudo sobre Machine Learning em português.</p>
+<p>Estudantes, professores e profissionais são convidados a contribuir, independentemente do nível de experiência. Uma contribuição não precisa ser grande: uma correção, uma referência, uma explicação melhor ou um novo experimento já pode ajudar outras pessoas a aprender.</p>
+<blockquote>
+<p><strong>Para colaborar com novos tópicos e implementações, consulte a <a href="../">ementa do curso</a> e veja o que ainda falta para ser feito.</strong></p>
+</blockquote>
+<h2 id="1-sobre-o-projeto">1. <strong>Sobre o projeto</strong></h2>
+<p>O projeto está em constante construção. Correções de erros conceituais, fórmulas incorretas, bugs, melhorias de implementação, novos algoritmos, projetos e refinamentos dos materiais são extremamente bem-vindos.</p>
+<p>A ideia é construir coletivamente um material de estudo <strong>aberto, acessível e tecnicamente fundamentado</strong>.</p>
+<p>Contribua com aquilo que você sabe e, principalmente, esteja aberto a aprender com as contribuições de outras pessoas.</p>
+<hr />
+<h2 id="2-boas-praticas">2. <strong>Boas práticas</strong></h2>
+<h3 id="referencias-e-licencas">Referências e licenças</h3>
+<p>Ao utilizar materiais externos:</p>
+<ul>
+<li>Verifique sua licença de uso antes de reproduzir ou adaptar conteúdo.</li>
+<li>Dê os devidos créditos aos autores.</li>
+<li>Referencie livros, artigos, cursos, documentações e outras fontes utilizadas.</li>
+<li>Não copie materiais protegidos por direitos autorais sem a devida autorização.</li>
+<li>Prefira fontes consolidadas e bem fundamentadas.</li>
+</ul>
+<p>Explicações e resoluções devem, sempre que possível, ser fundamentadas em materiais reconhecidos na academia ou na comunidade técnica.</p>
+<h3 id="3-qualidade-do-conteudo">3. <em>Qualidade do conteúdo</em>*</h3>
+<p>Evite produzir conteúdo excessivamente genérico ou superficial.</p>
+<p>Ao criar uma implementação ou projeto, procure compreender:</p>
+<ul>
+<li>qual problema está sendo resolvido;</li>
+<li>qual é o objetivo da implementação;</li>
+<li>por que determinado algoritmo ou modelo foi escolhido;</li>
+<li>quais são suas hipóteses e limitações;</li>
+<li>como os resultados devem ser interpretados.</li>
+</ul>
+<p>O objetivo é <strong>entender e explicar o que está sendo feito</strong>.</p>
+<h3 id="4-uso-de-inteligencia-artificial">4. <strong>Uso de Inteligência Artificial</strong></h3>
+<p>Ferramentas de Inteligência Artificial podem auxiliar no desenvolvimento das contribuições, especialmente na escrita, revisão, organização e programação.</p>
+<p>Entretanto, seu uso deve ser consciente.</p>
+<p>Não envie código ou textos gerados por IA sem compreender, revisar e validar o resultado.</p>
+<p>Ao utilizar IA:</p>
+<ul>
+<li>analise o código antes de submetê-lo;</li>
+<li>verifique se as explicações estão corretas;</li>
+<li>valide fórmulas e resultados;</li>
+<li>confira todas as referências;</li>
+<li>nunca invente ou aceite referências bibliográficas sem verificar sua existência;</li>
+<li>utilize os materiais já existentes no projeto como referência de estrutura e estilo.</li>
+</ul>
+<p>A IA deve <strong>auxiliar o aprendizado, não substituí-lo</strong>.</p>
+<p>Nem todos possuem facilidade para escrever textos com excelência. Ferramentas de IA podem ajudar nesse processo, mas contribuições genéricas ou pouco fundamentadas dificilmente serão incorporadas ao projeto sem revisão.</p>
+<hr />
+<h2 id="5-branches">5. <strong>Branches</strong></h2>
+<p>A organização de branches deve permanecer simples.</p>
+<h3 id="main"><code>main</code></h3>
+<p>A branch <code>main</code> representa a versão estável e publicável do projeto.</p>
+<h3 id="branches-de-contribuicao">Branches de contribuição</h3>
+<p>Para novas contribuições, crie uma branch específica:</p>
+<pre><code class="language-text">novo/nome-da-contribuicao
+corr/nome-da-correcao
+docs/nome-da-documentacao
+</code></pre>
+<p>Exemplos:</p>
+<pre><code class="language-text">novo/regressao-linear
+novo/colab-kmeans
+corr/formula-pca
+docs/melhorar-guia-regressao
+</code></pre>
+<p>Após finalizar a contribuição, abra um <strong>Pull Request</strong> para <code>main</code>.</p>
+<p>Branches temporárias devem ser removidas após o merge, quando não forem mais necessárias.</p>
+<hr />
+<h2 id="6-commits">6. <strong>Commits</strong></h2>
+<p>Os commits devem seguir uma estrutura consistente para facilitar o entendimento do histórico, o versionamento e a identificação de alterações.</p>
+<h3 id="formato"><strong>Formato</strong></h3>
+<pre><code class="language-text">&lt;tipo&gt;(&lt;escopo&gt;): &lt;descrição&gt;
+</code></pre>
+<p>As descrições devem ser objetivas e, preferencialmente, seguir o formato:</p>
+<pre><code class="language-text">verbo no gerúndio + objeto da ação + finalidade (opcional)
+</code></pre>
+<p>Exemplo:</p>
+<pre><code class="language-text">novo(regressão): adicionando projeto de predição binária
+</code></pre>
+<p>A descrição não precisa conter todas as informações sobre a alteração. Use apenas as palavras necessárias para comunicar claramente o que foi feito.</p>
+<h3 id="tipos">Tipos</h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>novo</code></td>
+<td>Novo conteúdo, notebook ou funcionalidade</td>
+</tr>
+<tr>
+<td><code>docs</code></td>
+<td>Alterações na documentação</td>
+</tr>
+<tr>
+<td><code>corr</code></td>
+<td>Correções de erros ou problemas</td>
+</tr>
+<tr>
+<td><code>refat</code></td>
+<td>Reorganização ou melhoria estrutural</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>Alterações de configuração e manutenção</td>
+</tr>
+</tbody>
+</table>
+<h3 id="escopo"><strong>Escopo</strong></h3>
+<p>Não existem palavras-chave obrigatórias para o escopo.</p>
+<p>Utilize nomes que façam sentido para a alteração, como:</p>
+<pre><code class="language-text">regressao
+classificacao
+pca
+kmeans
+guias
+colabs
+readme
+</code></pre>
+<p>Observe commits anteriores antes de escolher um novo termo. Quando já existir um padrão estabelecido, procure mantê-lo.</p>
+<h3 id="idioma"><strong>Idioma</strong></h3>
+<p>Os commits deste projeto devem ser escritos <strong>preferencialmente em português</strong>.</p>
+<p>Isso faz parte da identidade do projeto e mantém seu histórico consistente com seu propósito de construir uma comunidade brasileira de aprendizado.</p>
+<p>Exemplos:</p>
+<pre><code class="language-text">novo(regressao): adicionando implementação de regressão linear
+docs(classificacao): melhorando explicação de matriz de confusão
+corr(pca): corrigindo cálculo da variância explicada
+refat(colabs): reorganizando notebooks de regressão
+</code></pre>
+<p>Ferramentas de Inteligência Artificial podem auxiliar na formulação dos commits, mas a responsabilidade pela escolha do tipo, escopo e descrição permanece com o contribuidor.</p>
+<hr />
+<h2 id="7-estrutura-dos-arquivos">7. <strong>Estrutura dos arquivos</strong></h2>
+<p>Cada tópico deve seguir, o máximo possível, a estrutura:</p>
+<pre><code class="language-text">topico/
+├── README.md
+└── colabs/
+    ├── MAPA.md
+    └── *.ipynb
+
+docs/_topico
+└── GUIA.md
+</code></pre>
+<h3 id="readmemd"><code>README.md</code></h3>
+<p>Apresenta um resumo rápido do tópico.</p>
+<p>Deve conter:</p>
+<ul>
+<li>breve descrição do assunto;</li>
+<li>principais conceitos abordados;</li>
+<li>referências e materiais utilizados;</li>
+<li>links relevantes para outras partes do projeto.</li>
+</ul>
+<p>O README deve ser objetivo. Ele funciona como uma porta de entrada para o tópico.</p>
+<h3 id="guiamd"><code>GUIA.md</code></h3>
+<p>É a principal página de estudo do tópico.</p>
+<p>O arquivo deve apresentar o conteúdo de maneira progressiva, conduzindo o leitor desde a introdução até os conceitos mais avançados abordados naquele tópico.</p>
+<p><strong>Pode conter:</strong></p>
+<ul>
+<li>explicações;</li>
+<li>fórmulas;</li>
+<li>gráficos;</li>
+<li>imagens;</li>
+<li>exemplos;</li>
+<li>trechos de código;</li>
+<li>links para aulas;</li>
+<li>referências bibliográficas;</li>
+<li>links para notebooks.</li>
+</ul>
+<p>A estrutura de <strong>introdução → desenvolvimento → conclusão</strong> deve estar presente de maneira natural, garantindo uma evolução incremental do conhecimento.</p>
+<h3 id="colabsmapamd"><code>colabs/MAPA.md</code></h3>
+<p>Reúne os notebooks disponíveis naquele tópico.</p>
+<p>Cada entrada deve apresentar, de forma simples:</p>
+<ul>
+<li>título;</li>
+<li>descrição;</li>
+<li>link para o notebook.</li>
+</ul>
+<p>Exemplo:</p>
+<pre><code class="language-md">## Predição de consumo em bares
+
+A partir de uma base sintética de consumo de bebidas em um determinado bar, este notebook busca estimar, dado um conjunto básico de parâmetros, qual será o consumo de uma bebida x em determinado dia y. Isso permite estimar os custos previamente, otimizando gastos e evitando desperdício.
+
+Acesse em: link_para_colab
+Arquivo no projeto: caminho_arquivo
+
+</code></pre>
+<h3 id="ipynb"><code>*.ipynb</code></h3>
+<p>Os notebooks são o espaço de experimentação prática.</p>
+<p>Devem conter explicações, mesmo que breves, sobre as implementações realizadas.</p>
+<p>Sempre que possível:</p>
+<ul>
+<li>explique o objetivo do experimento;</li>
+<li>documente as principais etapas;</li>
+<li>justifique decisões importantes;</li>
+<li>interprete os resultados;</li>
+<li>inclua bibliografia básica;</li>
+<li>diferencie claramente código de biblioteca e implementações próprias.</li>
+</ul>
+<p>A estrutura específica do notebook pode variar conforme o objetivo do experimento.</p>
+<hr />
+<h2 id="8-pull-requests">8. <strong>Pull Requests</strong></h2>
+<p>Antes de abrir um Pull Request:</p>
+<ol>
+<li>Verifique se a contribuição está de acordo com a proposta do projeto.</li>
+<li>Revise o conteúdo e o código.</li>
+<li>Execute os notebooks quando possível.</li>
+<li>Utilize commits organizados.</li>
+</ol>
+<p>Um Pull Request deve explicar brevemente <strong>o que foi alterado e por quê</strong>.</p>
+<p>Contribuições podem passar por revisão e discussão antes de serem incorporadas ao projeto.</p>
+<hr />
+<h2 id="9-duvidas-e-sugestoes">9. <strong>Dúvidas e sugestões</strong></h2>
+<p>Encontrou um problema, possui uma sugestão ou gostaria de discutir uma ideia?</p>
+<p>Abra uma <strong>Issue</strong> ou participe das discussões do projeto.</p>
+<p>Toda contribuição pode ajudar a tornar este material melhor para a próxima pessoa que chegar aqui.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../configs/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

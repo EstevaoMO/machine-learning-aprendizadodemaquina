@@ -1,0 +1,984 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../bem_vindo/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>01. Fundamentos de ML - Guia de Aprendizado de Máquina | Machine Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../configs/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fundamentos-de-aprendizado-de-maquina" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Guia de Aprendizado de Máquina | Machine Learning" class="md-header__button md-logo" aria-label="Guia de Aprendizado de Máquina | Machine Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guia de Aprendizado de Máquina | Machine Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              01. Fundamentos de ML
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribua/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contribua
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../bem_vindo/" class="md-tabs__link">
+          
+  
+  
+  Curso
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guia de Aprendizado de Máquina | Machine Learning" class="md-nav__button md-logo" aria-label="Guia de Aprendizado de Máquina | Machine Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Guia de Aprendizado de Máquina | Machine Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribua
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curso
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curso
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bem_vindo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Bem-vindo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Fundamentos de ML
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Fundamentos de ML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introdução
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processo-de-aprendizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processo de Aprendizado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grandes-categorias-de-problemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grandes Categorias de Problemas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grandes Categorias de Problemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aprendizado-supervisionado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aprendizado supervisionado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aprendizado-nao-supervisionado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aprendizado não supervisionado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aprendizado-semi-supervisionado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aprendizado semi-supervisionado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aprendizado-por-reforco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aprendizado por reforço
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-variaveis-e-predicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de Variáveis e Predição
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#veja-mais-ibm-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Veja Mais: IBM Technology
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_02_pre_processamento_de_dados/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Pré-processamento de Dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_03_avaliacao_de_modelos/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Avaliação de Modelos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_04_regressao/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Regressão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_05_arvores_e_ensembles/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Árvores e Ensembles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_06_reducao_de_dimensionalidade/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Redução de Dimensionalidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_07_clustering/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Clustering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="fundamentos-de-aprendizado-de-maquina">Fundamentos de Aprendizado de Máquina</h1>
+<p><a href="../../bem_vindo/">← Anterior</a></p>
+<h2 id="introducao">Introdução</h2>
+<p><strong>Tom Mitchell</strong>, em 1997, levantou uma definição formal para o conceito:</p>
+<blockquote>
+<p>"A computer program is said to learn from experience E for some class of tasks T and performance P, if its performance at tasks in T, as measured P, improves with experience E."</p>
+</blockquote>
+<p><strong>Portanto, um programa de computacional aprende se, a partir de experiências, suas métricas de performance em uma tarefa específica melhoram.</strong></p>
+<p>Imaginar isso em nível humano é relativamente simples. No entanto, refletir e estruturar esse "pensamento" para o computador é o desafio que o machine learning propõe-se a vencer. Esses algoritmos de <strong>otimização</strong> são fundamentados na inferência estatística para observação de padrões nos dados históricos de um determinado domínio (contexto). A partir desse aprendizado, o computador consegue, enfim, predizer o dado almejado; naturalmente, com uma margem de erro que vamos sempre tentar reduzir.</p>
+<p>Esses modelos e algoritmos <strong>podem</strong> (e normalmente devem) <strong>ser combinados para encontrar a saída desejada e com menor margem de erro</strong>. Cada problema exigirá um conjunto de soluções específicas, e essa é essencialmente a habilidade que você desenvolverá ao longo deste curso. Você deverá ser capaz de, ao observar um determinado problema, determinar quais modelos e abordagens serão mais eficientes, aplicando algoritmos e extraindo informações estratégicas desses dados.</p>
+<h2 id="processo-de-aprendizado">Processo de Aprendizado</h2>
+<p>Assim como nós, seres humanos, aprendemos a partir das informações que adquirimos ao longo da vida, as máquinas aprendem a partir de <strong>dados históricos</strong>. Esses dados, por natureza, precisam ser de origem numérica; mais especificamente, expressos de <strong>forma vetorial</strong>. Do contrário, o computador não será capaz de "entender" o conteúdo ali descrito.</p>
+<p>O processo lógico e matemático se difere da <strong>análise prescritiva</strong>, onde os dados são estudados e chega-se a uma conclusão dos eventos passados. O aprendizado de máquina nos permite alcançar a <strong>análise preditiva</strong>, onde desenvolvemos a habilidade de <strong>inferir estatísticamente</strong> os dados. Esse é um salto de análise que nos permite <strong>antecipar diversos eventos</strong>, como: ações no mercado financeiro, fenômenos metereológicos, preço de produtos, comportamentos de usuários.</p>
+<blockquote>
+<p>"A indução é a forma de inferência lógica que permite obter conclusões genéricas sobre um conjunto particular de exemplos. Ela é caracterizada como o raciocínio que se origina em um conceito específico e o generaliza, ou seja, da parte para o todo."</p>
+<p><a href="https://dcm.ffclrp.usp.br/~augusto/publications/2003-sistemas-inteligentes-cap4.pdf">Conceitos sobre Aprendizado de Máquina, pg. 40 - MC Monard, JA Baranauskas (2003)</a></p>
+</blockquote>
+<p>Essa natureza da indução de generalizar, no entanto, apresenta um problema que posteriormente descobriremos de forma prática como evitar em nosso modelo: o <strong>viés</strong> (bias).</p>
+<p>Nossa amostra de dados, quando não bem selecionado e otimizada, pode nos gerar um <strong>algoritmo falsamente preciso</strong>. Ele pode estar muito bem treinado em uma categoria, mas <strong>não apresentar uma boa capacidade de generalização para novos dados</strong>. Por isso a importância do pré-processamento e tratamento de dados que veremos no próximo módulo.</p>
+<blockquote>
+<p>"Apesar da indução ser o recurso mais utilizado pelo cérebro humano para derivar conhecimento novo, ela deve ser utilizada com cautela, pois se o número de exemplos for insuficiente, ou se os exemplos não forem bem escolhidos, as hipóteses obtidas podem ser de pouco valor."</p>
+<p><a href="https://dcm.ffclrp.usp.br/~augusto/publications/2003-sistemas-inteligentes-cap4.pdf">Conceitos sobre Aprendizado de Máquina, pg. 40 - MC Monard, JA Baranauskas (2003)</a></p>
+</blockquote>
+<h2 id="grandes-categorias-de-problemas">Grandes Categorias de Problemas</h2>
+<p><em>Não se preocupe em decorar todos os termos apresentados, apenas foque em absorver as ideias. Todos os termos mais técnicos serão explicados e aprofundados posteriormente.</em></p>
+<h3 id="aprendizado-supervisionado"><strong>Aprendizado supervisionado</strong></h3>
+<p>É o paradigma dominante em aplicações comerciais na atualidade. A característica fundamental do aprendizado supervisionado é a presença da <strong>variável-alvo</strong>, também chamada de <em>target</em> ou <em>rótulo</em>. É chamado de "supervisionado" justamente porque exige essa variável previamente definida na base histórica para orientar e "supervisionar" as correções durante o treinamento do algoritmo.</p>
+<p>A partir de um <strong>conjunto de observações (<em>features</em>)</strong>, infere-se uma generalização precisa em comparação à relação real, representada pela expressão <span class="arithmatex">\(y \approx f(X)\)</span>. O algoritmo busca capturar e mapear essa relação de entrada-saída entre as variáveis explicativas e a resposta, permitindo realizar inferências estatísticas sólidas e prever novos cenários com dados inéditos.</p>
+<p><strong>Principais Desafios:</strong>
+Apesar de poderoso, este modelo exige cuidado e validação. Requer monitoramento contínuo da capacidade de generalização do algoritmo, o que significa equilibrar a complexidade do modelo através do clássico <strong>trade-off viés-variância</strong>, evitando dois grandes problemas:</p>
+<ul>
+<li><strong>Underfitting (Subajuste):</strong> Ocorre quando o modelo é simples demais para capturar a relação real dos dados.</li>
+<li><strong>Overfitting (Sobreajuste):</strong> Ocorre quando o modelo se ajusta de forma excessiva e memoriza o ruído da base histórica, perdendo o poder de prever novos cenários.</li>
+</ul>
+<p>Em geral, o <em>overfitting</em> será nosso maior desafio. Comumente os modelos tendem a "ficar viciados" nos padrões dos dados conhecidos, inferindo uma função <span class="arithmatex">\(f(X)\)</span> perfeita para dados similares aos dados de treinamento. Porém, quando novos dados chegam para esses modelos "viciados", eles não são capazes de prever corretamente o valor real. Veja na imagem a seguir:</p>
+<p><em>Imagem extraída de <a href="https://aiml.com/what-are-some-options-to-address-overfitting-in-neural-networks/">https://aiml.com/what-are-some-options-to-address-overfitting-in-neural-networks/</a>.</em>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Faiml.com%2Fwp-content%2Fuploads%2F2023%2F10%2Fproblem-of-overfitting_nn_mit.png&f=1&nofb=1&ipt=1e79315839f3f18ee6733de57ce4c4b284e194c70741a67a16f9859c5c6f6a3e" alt="Underffiting vs. Overfitting" /></p>
+<p>Observe como no caso do underfitting, à esquerda, a função não descreve corretamente o comportamento dos dados; perceba como o erro médio entre o valor predito e o valor real é notório. Enquanto, à direita, a função descreve perfeitamente os dados treinados, no entanto, apenas os dados treinados. Qualquer dado novo, o modelo terá tanta dificuldade quanto o underfitting para generalizar o comportamento. Por isso, ao centro, temos a função ideal. A função acompanha a curva dos dados, sendo <strong>capaz de generalizar para qualquer nova entrada</strong>. Esse será sempre nosso objetivo.</p>
+<p>Por fim, dentro do conceito de aprendizado supervisionado, temos duas principais classes de problemas:</p>
+<ul>
+<li><strong>Regressão</strong>: É aplicada quando a variável-alvo é <strong>quantitativa ou contínua</strong>, assumindo valores numéricos reais. O objetivo é prever um valor numérico dentro de uma escala, como: preço de venda de uma casa, temperatura, duração, tamanho ou rendimento. Exemplos clássicos de algoritmos para esse fim incluem a regressão linear simples e múltipla.</li>
+<li><strong>Classificação</strong>: É aplicada quando a variável-alvo é <strong>qualitativa, categórica ou discreta</strong>, representando grupos ou classes definidas. O objetivo é prever a qual categoria uma nova observação pertence, como: classificar se uma transação financeira é fraude, se um e-mail é spam ou se o mercado financeiro vai subir ou cair em determinado dia. Na prática, muitos classificadores calculam primeiro uma probabilidade contínua de pertencimento à classe (gerando um score entre 0 e 1) e depois aplicam um critério de corte ou limiar de decisão para fazer a classificação discreta final. Exemplos típicos incluem regressão logística, K-vizinhos mais próximos (KNN) e Máquinas de Vetores de Suporte (SVMs).</li>
+</ul>
+<p>É fundamental entender que a grande maioria dos modelos <strong>classificadores</strong> não cospe a categoria final diretamente. Inicialmente, eles <strong>estimam uma probabilidade contínua de sucesso</strong> (um valor decimal entre 0 e 1). A classificação discreta final ocorre apenas quando aplicamos um <strong>limiar</strong> (threshold) ou critério de corte. Por exemplo, se determinarmos a regra de que uma probabilidade <span class="arithmatex">\(p(X)≥0.5\)</span> deve ser classificada como classe "positiva", apenas os dados que superarem essa métrica receberão o rótulo final. Essa métrica, naturalmente, surgirá de um processo analítico do domínio do problema.</p>
+<h3 id="aprendizado-nao-supervisionado"><strong>Aprendizado não supervisionado</strong></h3>
+<p>É o paradigma exploratório por excelência em projetos de dados. A característica fundamental do aprendizado não supervisionado é a <strong>ausência completa da variável-alvo</strong> (rótulo). Neste cenário, o algoritmo não possui um "gabarito" prévio na base histórica para guiar e supervisionar o seu treinamento.</p>
+<blockquote>
+<p>"Algoritmos de aprendizado de máquina não supervisionado discernem padrões intrínsecos em dados não rotulados, como similaridades, correlações ou agrupamentos potenciais. Eles são mais úteis em cenários em que esses padrões não são necessariamente aparentes para observadores humanos. Como o aprendizado não supervisionado não pressupõe a preexistência de uma saída 'correta' conhecida, ele não exige sinais de supervisão ou funções de perda convencionais — portanto, 'não supervisionado'."</p>
+<p><a href="https://www.ibm.com/br-pt/think/topics/machine-learning">O que é aprendizado de máquina?, Dave Bergmann - IBM Think</a></p>
+</blockquote>
+<p>A partir de um conjunto contendo apenas variáveis explicativas (<span class="arithmatex">\(X\)</span>), o modelo busca <strong>inferir padrões ocultos, densidades ou correlações internas</strong>. Em vez de mapear uma relação de entrada-saída explícita para prever um novo cenário, o objetivo é reestruturar ou simplificar a representação dos dados originais.</p>
+<p><strong>Principais Desafios:</strong>
+Como não há uma "resposta correta" matemática, este modelo exige alto senso crítico e domínio do negócio. Requer validação humana da utilidade do modelo, evitando dois grandes obstáculos metodológicos:</p>
+<ul>
+<li><strong>Subjetividade:</strong> Diferente dos modelos supervisionados, avaliar o sucesso aqui é mais desafiador. Não temos métricas absolutas (como precisão ou erro médio); o sucesso é validado pela utilidade prática da nova representação durante a análise exploratória.</li>
+<li><strong>Sensibilidade a ruídos e escalas:</strong> Como o algoritmo tenta encontrar similaridades em tudo, variáveis irrelevantes ou em escalas muito discrepantes podem distorcer completamente os agrupamentos gerados, distorcendo-os no espaço vetorial. Veremos como tratar esse tipo de problema na etapa normalização dos dados.</li>
+</ul>
+<p>Em geral, o desafio será dar significado ao que a máquina encontrou. Muitas vezes os algoritmos identificarão grupos matematicamente perfeitos, mas que não possuem lógica interpretável para o negócio. Veja na imagem a seguir:</p>
+<p><em>Imagem extraída de <a href="https://www.mathworks.com/discovery/unsupervised-learning.html">https://www.mathworks.com/discovery/unsupervised-learning.html</a></em>.</p>
+<p><img src="https://www.mathworks.com/discovery/unsupervised-learning/_jcr_content/mainParsys/band/mainParsys/lockedsubnav_copy/mainParsys/columns/335ce30a-77fd-4c27-af75-93672733f56b/columns/0e1a10a0-b289-4f36-9928-f1add97647b8/image_2128876021_cop.adapt.full.medium.png/1788512247796.png" alt="Aprendizado não supervisionado explicação gráfica"/></p>
+<p>Por fim, dentro do conceito de aprendizado não supervisionado, os mecanismos de sucesso dividem-se em duas principais ferramentas:</p>
+<ul>
+<li><strong>Agrupamento (clustering):</strong> O objetivo é <strong>separar os dados em subgrupos homogêneos</strong> (clusters), onde os elementos de um mesmo grupo são estatisticamente mais semelhantes entre si do que em relação aos outros grupos. É amplamente aplicado em negócios para segmentação de mercado, identificação de perfis de consumo e sistemas de recomendação. Exemplos clássicos incluem K-Means e Agrupamento Hierárquico.</li>
+<li><strong>Redução de dimensionalidade:</strong> O objetivo é <strong>simplificar um conjunto de dados complexo, reduzindo o número de variáveis de entrada</strong> (<span class="arithmatex">\(X\)</span>) enquanto preserva a essência das informações originais (variância). É essencial para eliminar redundâncias e permitir a visualização de dados de alta dimensão. O exemplo mais notório é a Análise de Componentes Principais (PCA).</li>
+</ul>
+<h3 id="aprendizado-semi-supervisionado"><strong>Aprendizado semi-supervisionado</strong></h3>
+<p>É uma abordagem híbrida crescente em aplicações modernas, posicionando-se estrategicamente entre os dois mundos anteriores. A característica fundamental do aprendizado semi-supervisionado é a utilização conjunta de um volume massivo de dados não rotulados combinado a uma pequena parcela de dados com a <strong>variável-alvo</strong> definida.</p>
+<p>A partir desse conjunto misto de observações, o modelo tenta aprender a forma geral dos dados usando a porção não supervisionada e, em seguida, utiliza os poucos rótulos disponíveis para guiar e calibrar a predição.</p>
+<p><strong>Principais Desafios:</strong>
+Apesar de eficiente, este modelo surge para resolver um problema de viabilidade financeira e operacional. O principal desafio que justifica e impulsiona o seu uso é o chamado <strong>gargalo de rotulação de dados</strong>:</p>
+<ul>
+<li><strong>Coleta vs. Rotulação:</strong> Na realidade do mercado, coletar dados brutos (<span class="arithmatex">\(X\)</span>) é um processo massivo e barato (como armazenar histórico de compras ou captar imagens). No entanto, rotular esses dados com o seu devido <span class="arithmatex">\(y\)</span> exige trabalho humano especializado e custoso. No cenário da detecção de fraudes, por exemplo, extrair dados de milhões de transações diárias é rotina, mas alocar auditores humanos para classificar manualmente cada uma delas para treinar um modelo supervisionado tradicional é operacionalmente inviável.</li>
+</ul>
+<blockquote>
+<p>"Rotular dados pode ser especialmente tedioso para determinados casos de uso. Em casos de uso mais especializados de aprendizado de máquina, como descoberta de medicamentos, sequenciamento genético ou classificação de proteínas, a anotação de dados não apenas é extremamente demorada, mas também requer expertise em domínio muito específico."</p>
+<p><a href="https://www.ibm.com/br-pt/think/topics/semi-supervised-learning">O que é aprendizado semissupervisionado?, Dave Bergmann - IBM Think</a></p>
+</blockquote>
+<p>Por fim, a principal abordagem utilizada dentro deste fluxo é:</p>
+<ul>
+<li><strong>A Metodologia do pseudo-rótulo (Pseudo-labeling):</strong> O processo ocorre em etapas. Inicialmente, o algoritmo avalia a similaridade de todos os dados de forma não supervisionada. Em seguida, ele utiliza os poucos dados rotulados para "propagar" essa classificação e gerar classificações prévias (pseudo-rótulos) para os dados não rotulados adjacentes. Com a base agora "aumentada" e totalmente etiquetada, os dados alimentam um algoritmo supervisionado padrão para o treinamento final.</li>
+</ul>
+<h3 id="aprendizado-por-reforco"><strong>Aprendizado por reforço</strong></h3>
+<p>É um paradigma construído sobre um alicerce diferente dos anteriores, focado na tomada de decisão sequencial e na interação contínua. A característica fundamental do aprendizado por reforço é a figura de um <strong>agente</strong> que aprende através da <strong>tentativa e erro</strong> dentro de um <strong>ambiente</strong>.</p>
+<blockquote>
+<p>"O objetivo do agente é ganhar o máximo de recompensas possível ao longo do tempo. Ele faz isso aprendendo uma política, que é basicamente uma estratégia que diz qual ação tomar em qualquer situação. Essa política é refinada em várias iterações de interação com o ambiente."</p>
+<p><a href="https://cloud.google.com/discover/what-is-reinforcement-learning?hl=pt-BR">O que é aprendizagem por reforço? - Google Cloud</a></p>
+</blockquote>
+<p>O coração desta abordagem é o <strong>ciclo interativo agente-ambiente</strong>. A tomada de decisão ocorre de forma estritamente sequencial: cada ação escolhida e executada pelo agente altera o estado atual do próprio ambiente. Consequentemente, essa alteração influencia diretamente as recompensas (feedbacks positivos) ou punições (feedbacks negativos) que ele receberá nos passos futuros.</p>
+<p><strong>Principais Desafios:</strong>
+Por ser um processo altamente dinâmico e interativo, o agente não recebe um "gabarito" apontando o caminho correto. No decorrer do treinamento, o algoritmo deverá gerenciar constantemente um conflito clássico da área, conhecido como o <strong>dilema exploration vs. exploitation</strong> (muito similar ao viés-variância):</p>
+<ul>
+<li><strong>Exploration (Exploração):</strong> O agente tenta novas ações desconhecidas para mapear o ambiente e descobrir caminhos possivelmente melhores e mais eficientes a longo prazo.</li>
+<li><strong>Exploitation (Aproveitamento):</strong> O agente utiliza as melhores ações já descobertas e consolidadas até o momento para garantir as maiores recompensas imediatas e seguras.</li>
+</ul>
+<p>Para compreender esse <em>trade-off</em>, compare-o com a escolha de um restaurante para jantar. Você pode optar por ir sempre ao seu restaurante favorito de confiança, garantindo que a refeição será boa (<em>exploitation</em>). Por outro lado, você pode decidir testar um restaurante novo e desconhecido na cidade; correndo o risco de ter uma experiência ruim, mas com a chance de descobrir um lugar maravilhoso que se tornará o seu novo favorito (<em>exploration</em>). O aprendizado perfeito exige que a máquina saiba equilibrar ambas as atitudes.</p>
+<p>A abordagem de aprendizado por reforço passa por conceitos mais profundos de machine learning, portanto, considere-se apenas apresentado ao conceito. Posteriormente, em tardes módulos, aprofundaremos esse conhecimento. No momento, não se desgaste tanto em compreendê-lo.</p>
+<h2 id="tipos-de-variaveis-e-predicao">Tipos de Variáveis e Predição</h2>
+<p>Embora a escolha da abordagem matemática do algoritmo seja definida exclusivamente pela natureza da variável-alvo (<span class="arithmatex">\(Y\)</span>), as variáveis de entrada (<span class="arithmatex">\(X\)</span>) podem ser uma mistura complexa de dados contínuos e categóricos. A única ressalva é que o computador precisa de representações numéricas; portanto, as variáveis categóricas devem ser devidamente transformadas e codificadas antes de entrarem na etapa de treinamento do modelo.</p>
+<p>No mundo real, dados brutos raramente chegam perfeitamente estruturados e prontos para uso. Eles costumam apresentar ruídos, inconsistências e valores ausentes que exigem métodos rigorosos de <strong>tratamento e imputação</strong> para que o algoritmo não aprenda padrões errados.</p>
+<p>Além disso, a grande maioria dos modelos matemáticos é altamente sensível à escala dos dados. Se estivermos lidando com variáveis contínuas de grandezas muito distintas no mesmo conjunto de entrada — como <code>idade</code> (variando de 18 a 80) e <code>renda anual</code> (variando na casa das dezenas de milhares) —, o modelo pode dar um peso falsamente maior à variável de maior magnitude simplesmente por seus números serem maiores.</p>
+<p>Para corrigir essas distorções estatísticas, aplicamos técnicas de <strong>escalonamento</strong>, como a normalização e a padronização, garantindo que todas as características do conjunto de dados contribuam de forma equilibrada e justa para o aprendizado da máquina.</p>
+<p>Todo esse processo de limpeza, transformação e adequação compõe uma etapa crítica chamada de <strong>pré-processamento de dados</strong>, e nós veremos isso com muito mais detalhes no próximo módulo.</p>
+<h2 id="veja-mais-ibm-technology">Veja Mais: IBM Technology</h2>
+<p>O vídeo a seguir deve ajudá-lo a entender melhor as diferenças entre os modelos e suas aplicações práticas.</p>
+<div class="video-wrapper">
+  <iframe width="800" src="https://www.youtube.com/embed/W01tIRP_Rqs" title="Supervised vs. Unsupervised Learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" cc_load_policy=1 cc_lang_pref=pt allowfullscreen></iframe>
+</div>
+
+<p><em>Vídeo original por </em><em>IBM Technology</em><em> no <a href="https://youtu.be/W01tIRP_Rqs">YouTube</a>.</em></p>
+<hr />
+<p><a href="_02_pre_processamento_de_dados/GUIA.md">Próximo →</a></p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../configs/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
