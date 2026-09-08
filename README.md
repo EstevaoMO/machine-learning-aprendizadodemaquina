@@ -6,7 +6,7 @@
 
 Uma trilha estruturada e prática para aprender Machine Learning em português. Combina teoria sólida, implementação com código e aplicação prática.
 
-[Consulte o mapa completo de estudos](./docs/index.md)
+[Consulte o mapa completo de estudos](https://estevaomo.github.io/machine-learning-aprendizadodemaquina/index.html)
 
 ## Conteúdo
 
