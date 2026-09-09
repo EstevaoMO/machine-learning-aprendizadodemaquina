@@ -17,15 +17,25 @@ Bem-vindo ao repositório do curso! Este `index.md` servirá como o seu mapa int
     - Aprendizado por Reforço
 - **Tipos de Variáveis e Predição**
 
-### Módulo 2: Dados e Pré-processamento (não implementado)
+### Módulo 2: Dados e Pré-processamento (em desenvolvimento)
 #### Tópicos
 - **Identificação e Tratamento de Dados Faltantes**
+    - Remoção de Registros (Listwise Deletion)
+    - Imputação Estatística Simples
+    - Tratamento Nativo em Algoritmos
 - **Escalonamento e Padronização de Atributos**
-    - Z-score Standardization
+    - Padronização Z-score (StandardScaler)
+    - Escalonamento Min-Max, MaxAbs e Robust Scaler
+    - Transformações Não-Lineares (Logarítmica, Box-Cox e Quantil)
+    - Discretização e Binarização de Atributos
     - Sensibilidade dos Algoritmos à Escala
 - **Codificação de Variáveis Categóricas**
+    - Variáveis Ordinais vs. Nominais
+    - One-Hot Encoding e Variáveis Dummy
+    - Tratamento de Categorias Infrequentes e Alta Cardinalidade
 - **Detecção e Tratamento de Outliers e Ruídos**
-    - Variáveis Dummy
+    - Métodos Estatísticos de Detecção (IQR, Resíduos Studentizados)
+    - Estratégias de Mitigação (Capping, Remoção e Transformações)
 
 ### Módulo 3: Avaliação de Modelos e Generalização (não implementado)
 #### Tópicos
