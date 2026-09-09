@@ -1,4 +1,4 @@
-# Fundamentos de Aprendizado de Máquina
+# Módulo 1: Fundamentos de Aprendizado de Máquina
 
 [← Anterior](../bem_vindo.md)
 
@@ -149,6 +149,6 @@ O vídeo a seguir deve ajudá-lo a entender melhor as diferenças entre os model
 
 ---
 
-[Próximo →](_02_pre_processamento_de_dados/GUIA.md)
+[Próximo →](../_02_dados_e_preprocessamento/GUIA.md)
 
 ---

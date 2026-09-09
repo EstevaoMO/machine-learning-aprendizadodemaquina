@@ -39,7 +39,7 @@ nav:
   - Curso:
       - 👋 Bem-vindo: bem_vindo.md
       - 01. Fundamentos de Machine Learning: _01_fundamentos_de_ml/GUIA.md
-      - 02. Pré-processamento de Dados: _02_pre_processamento_de_dados/GUIA.md
+      - 02. Pré-processamento de Dados: _02_dados_e_preprocessamento/GUIA.md
       - 03. Avaliação de Modelos: _03_avaliacao_de_modelos/GUIA.md
       - 04. Regressão: _04_regressao/GUIA.md
       - 05. Árvores e Ensembles: _05_arvores_e_ensembles/GUIA.md

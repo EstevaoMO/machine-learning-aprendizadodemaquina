@@ -6,7 +6,7 @@ Bem-vindo ao repositório do curso! Este `index.md` servirá como o seu mapa int
 
 ## **Ementa do Curso**
 
-### [Módulo 1: Fundamentos de ML](./_01_fundamentos_de_ml/GUIA.md)
+### [Módulo 1: Fundamentos de Machine Learning](./_01_fundamentos_de_ml/GUIA.md)
 #### Tópicos
 - **Introdução (Definição Clássica)**
 - **O Processo de Aprendizado**
@@ -17,7 +17,7 @@ Bem-vindo ao repositório do curso! Este `index.md` servirá como o seu mapa int
     - Aprendizado por Reforço
 - **Tipos de Variáveis e Predição**
 
-### Módulo 2: Dados e Pré-processamento (em desenvolvimento)
+### [Módulo 2: Dados e Pré-processamento](./_02_dados_e_preprocessamento/GUIA.md) (em desenvolvimento)
 #### Tópicos
 - **Identificação e Tratamento de Dados Faltantes**
     - Remoção de Registros (Listwise Deletion)
