@@ -1,5 +1,5 @@
 
-**[← Página inicial](../README.md)** · **[Guia do módulo →](./GUIA.md)**
+**[← Página inicial](../README.md)** · **[Guia do módulo →](../docs/_01_fundamentos_de_ml/GUIA.md)**
 
 [Módulo 02: Dados e Pré-processamento →](../02_dados_e_preprocessamento/README.md)
 
@@ -17,18 +17,16 @@ Ao concluir este módulo, você deverá ser capaz de:
 
 - Explicar o que é Machine Learning e como ele se diferencia de abordagens tradicionais de programação.
 - Compreender o processo geral de aprendizado de um modelo.
-- Conhecer o fluxo metodológico do CRISP-DM.
-- Diferenciar os principais paradigmas de aprendizado.
+- Diferenciar os principais paradigmas de aprendizado.·
 - Identificar problemas de regressão e classificação.
 - Reconhecer diferentes tipos de variáveis e seus papéis em um problema de ML.
 
 ## 📋 Conteúdo
 
-1. [Definição Clássica de ML](./GUIA.md#definição-clássica-de-ml)
-2. [Processo de Aprendizado](./GUIA.md#processo-de-aprendizado)
-3. [Abordagem Metodológica (CRISP-DM)](./GUIA.md#abordagem-metodológica-crisp-dm)
-4. [Grandes Categorias de Problemas](./GUIA.md#grandes-categorias-de-problemas)
-5. [Tipos de Variáveis e Predição](./GUIA.md#tipos-de-variáveis-e-predição)
+1. [Definição Clássica de ML](https://estevaomo.github.io/machine-learning-aprendizadodemaquina/_01_fundamentos_de_ml/GUIA/#introducao)
+2. [Processo de Aprendizado](https://estevaomo.github.io/machine-learning-aprendizadodemaquina/_01_fundamentos_de_ml/GUIA/#processo-de-aprendizado)
+3. [Grandes Categorias de Problemas](https://estevaomo.github.io/machine-learning-aprendizadodemaquina/_01_fundamentos_de_ml/GUIA/#grandes-categorias-de-problemas)
+4. [Tipos de Variáveis e Predição](https://estevaomo.github.io/machine-learning-aprendizadodemaquina/_01_fundamentos_de_ml/GUIA/#tipos-de-variaveis-e-predicao)
 
 ## 🧪 Laboratórios
 
@@ -44,6 +42,8 @@ A prática deste módulo possui caráter introdutório, priorizando a **explora�
 - [Conceitos sobre Aprendizade de Máquina; MC Monard, JA Baranauskas (2003)](https://dcm.ffclrp.usp.br/~augusto/publications/2003-sistemas-inteligentes-cap4.pdf)
 - [Machine Learning - IBM](https://www.ibm.com/br-pt/think/topics/machine-learning)
 - [Machine Learning - Zhi-Hua Zhou](https://books.google.com.br/books?id=ctM-EAAAQBAJ&lpg=PR6&ots=o_QpV8RxYr&dq=machine%20learning&lr&pg=PR2#v=onepage&q=machine%20learning&f=false)
+- [What is Unsupervised Learning? - AIML](https://aiml.com/what-is-unsupervised-learning/)
+- [Semi Supervised Learning - Dave Bergmann, IBM](https://www.ibm.com/br-pt/think/topics/semi-supervised-learning)
 
 ---
 
