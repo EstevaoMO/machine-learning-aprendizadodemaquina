@@ -1,0 +1,1216 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../_01_fundamentos_de_ml/GUIA/">
+      
+      
+        <link rel="next" href="../../colabs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>02. Pré-processamento de Dados - Guia de Aprendizado de Máquina | Machine Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../configs/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulo-2-dados-e-pre-processamento" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Guia de Aprendizado de Máquina | Machine Learning" class="md-header__button md-logo" aria-label="Guia de Aprendizado de Máquina | Machine Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guia de Aprendizado de Máquina | Machine Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              02. Pré-processamento de Dados
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribua/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contribua
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../bem_vindo/" class="md-tabs__link">
+          
+  
+  
+  Curso
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../colabs/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Colabs
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guia de Aprendizado de Máquina | Machine Learning" class="md-nav__button md-logo" aria-label="Guia de Aprendizado de Máquina | Machine Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Guia de Aprendizado de Máquina | Machine Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribua
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curso
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curso
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bem_vindo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👋 Bem-vindo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_01_fundamentos_de_ml/GUIA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Fundamentos de Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Pré-processamento de Dados
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Pré-processamento de Dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introdução
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vazamento-de-dados-data-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vazamento de Dados (Data Leakage)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tratamento-de-dados-faltantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tratamento de Dados Faltantes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tratamento de Dados Faltantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mecanismos-de-ausencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mecanismos de Ausência
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mecanismos de Ausência">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcar-missing-completely-at-random" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCAR (Missing Completely at Random)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mar-missing-at-random" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MAR (Missing at Random)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mnar-missing-not-at-random" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MNAR (Missing Not at Random)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imputacao-univariada-vs-multivariada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imputação Univariada vs. Multivariada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imputacao-multipla-e-o-algoritmo-mice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imputação Múltipla e o Algoritmo MICE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escalonamento-e-padronizacao-de-atributos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalonamento e Padronização de Atributos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Escalonamento e Padronização de Atributos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#padronizacao-z-score-standardization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padronização Z-score (Standardization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalonamento-min-max-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalonamento Min-Max (Normalization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalonamento-pelo-valor-absoluto-maximo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalonamento pelo Valor Absoluto Máximo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalonamento-robusto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalonamento Robusto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codificacao-de-variaveis-categoricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codificação de Variáveis Categóricas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deteccao-e-tratamento-de-outliers-e-ruidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detecção e Tratamento de Outliers e Ruídos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_03_avaliacao_de_modelos/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Avaliação de Modelos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_04_regressao/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Regressão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_05_arvores_e_ensembles/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Árvores e Ensembles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_06_reducao_de_dimensionalidade/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Redução de Dimensionalidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_07_clustering/GUIA.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Clustering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../colabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="modulo-2-dados-e-pre-processamento">Módulo 2: Dados e Pré-processamento</h1>
+<p><a href="../../_01_fundamentos_de_ml/GUIA/">← Anterior</a></p>
+<h2 id="introducao">Introdução</h2>
+<p>No módulo anterior, estabelecemos que os algoritmos de aprendizado de máquina necessitam de dados históricos representados de forma vetorial e numérica. No entanto, <strong>o mundo real é caótico.</strong> Os dados que extraímos de bancos relacionais, APIs, planilhas ou sensores raramente chegam perfeitamente estruturados e prontos para alimentar um modelo matemático.</p>
+<p>A etapa de pré-processamento muitas vezes consome a maior parte do tempo de um cientista de dados. É aqui que garantimos a integridade da informação. Modelos de machine learning são essencialmente motores matemáticos: se você os alimentar com "lixo" (dados ruidosos, ausentes ou em escalas distorcidas), eles fatalmente produzirão "lixo" em suas predições; princípio conhecido na computação como <em>Garbage In, Garbage Out</em> (GIGO).</p>
+<p>Neste módulo, mergulharemos nas principais técnicas de engenharia e preparação de dados necessárias para criar modelos robustos e generalizáveis.</p>
+<hr />
+<h2 id="vazamento-de-dados-data-leakage">Vazamento de Dados (Data Leakage)</h2>
+<p>Antes de aplicarmos qualquer técnica matemática de limpeza ou transformação que veremos a seguir, existe uma regra metodológica fundamental que não pode ser quebrada: <strong>você deve separar e isolar o seu conjunto de teste imediatamente.</strong></p>
+<p>O maior pecado que um cientista de dados pode cometer na etapa de pré-processamento chama-se <strong>Vazamento de Dados</strong> (<em>Data Leakage</em>). Esse fenômeno ocorre quando informações do conjunto de teste (os dados inéditos que usaremos para avaliar o modelo no futuro) contaminam o conjunto de treinamento (os dados que o modelo usa para aprender).</p>
+<p>Quando isso ocorre, o modelo apresenta um <strong>desempenho falso e excessivamente otimista</strong> na fase de desenvolvimento, mas que sofre uma queda drástica de precisão ao ser colocado em produção. É o equivalente a entregar o gabarito da prova para um aluno antes de ele começar a estudar; a nota final dele no teste será máxima, mas a sua real capacidade de resolver problemas inéditos será zero.</p>
+<p><strong>Como o vazamento acontece na prática?</strong></p>
+<p>O vazamento geralmente não é intencional, ele é fruto de processos executados fora de ordem. As origens mais comuns são:</p>
+<ul>
+<li><strong>Pré-processamento Global:</strong> Ocorre quando você calcula estatísticas (como a média para preencher dados nulos ou o valor máximo para escalonar variáveis) usando a base de dados inteira <em>antes</em> de separá-la. Se o algoritmo aprende a média global do arquivo, ele recebe conhecimento indireto sobre a distribuição dos dados de teste.</li>
+<li><strong>Vazamento Temporal (<em>Lookahead Bias</em>):</strong> Em dados sequenciais (como o preço de ações ou histórico de vendas), ocorre quando a divisão entre treino e teste é feita de forma aleatória, ignorando a linha do tempo. Isso permite que o modelo utilize informações do "futuro" para prever eventos do "passado".</li>
+<li><strong>Registros Duplicados:</strong> A presença de linhas idênticas espalhadas simultaneamente nos conjuntos de treino e teste faz com que o modelo apenas memorize as respostas em vez de aprender padrões matemáticos genéricos.</li>
+</ul>
+<p><strong>Boas Práticas</strong></p>
+<p>Para garantir que a estimativa de erro do seu modelo seja estatisticamente válida no mundo real, adote estas práticas como um mantra no seu fluxo de trabalho:</p>
+<ol>
+<li><strong>Isole o conjunto de teste:</strong> A primeira etapa prática do seu código deve ser a divisão dos dados. O conjunto de teste deve ser trancado em um "cofre" e permanecer intocado até o último segundo da avaliação final do sistema.</li>
+<li><strong><em>Fit</em> e <em>Transform</em>:</strong> Todos os cálculos estatísticos (imputadores, escalonadores e codificadores) devem extrair seus parâmetros matemáticos <strong>exclusivamente</strong> dos dados de treinamento. Na sintaxe de código, isso significa usar a função de aprendizado (<code>fit</code>) apenas no treino, e a função de aplicação (<code>transform</code>) no treino e no teste.</li>
+<li><strong>Respeite a cronologia:</strong> Se o seu problema envolve séries temporais, as divisões não podem ser aleatórias. O conjunto de treinamento deve sempre anteceder cronologicamente os dados de validação.</li>
+<li><strong>Encapsulamento (Pipelines):</strong> A forma mais profissional e segura de prevenir vazamentos acidentais é combinar a preparação de dados e o modelo dentro de um <em>Pipeline</em>. Essa estrutura garante que o pré-processamento seja executado na ordem correta, recalculando as estatísticas do zero a cada etapa sem contaminar os ambientes.</li>
+</ol>
+<hr />
+<h2 id="tratamento-de-dados-faltantes">Tratamento de Dados Faltantes</h2>
+<p>O primeiro grande desafio ao recebermos um conjunto de dados é lidar com as <strong>lacunas de informação</strong>. Em bases reais, valores faltantes costumam vir representados por símbolos como <code>?</code>, <code>NA</code>, <code>null</code>, <code>NaN</code> ou mesmo espaços em branco.</p>
+<p>É imperativo que você, como desenvolvedor, compreenda que um <strong>valor nulo é conceitualmente diferente do número zero ou de um texto vazio</strong>. Zero é uma informação quantitativa (ex: saldo bancário igual a zero); nulo representa a ausência total da informação (ex: não sabemos o saldo bancário). O problema é que a matemática falha ao tentar processar o "vazio".</p>
+<blockquote>
+<p>"A maioria dos algoritmos de Aprendizado de Máquina não consegue trabalhar com atributos faltantes [...]. Você tem três opções: </p>
+<ol>
+<li><em>Eliminar as instâncias correspondentes.</em></li>
+<li><em>Eliminar o atributo inteiro.</em></li>
+<li><em>Preencher os valores ausentes com algum valor</em> (zero, média, mediana etc.)."</li>
+</ol>
+<p>Traduzido de: <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Hands-on Machine Learning with Scikit-Learn, Keras &amp; TensorFlow, pg. 63 - Aurélien Géron, O'Reilly®</a></p>
+</blockquote>
+<p>Para lidar com essa ausência, aplicamos estratégias que variam desde intervenções simples até métodos estatísticos multivariados e iterativos:</p>
+<ul>
+<li><strong>Remoção de Registros (<em>Listwise Deletion</em>):</strong> Consiste na eliminação completa das linhas que contêm valores ausentes. Esta é uma abordagem drástica e recomendada apenas quando o volume de dados apagados representa uma fração muito pequena da sua amostragem total. Perder dados significa reduzir o tamanho da amostra e comprometer o poder de generalização do modelo.</li>
+<li><strong>Imputação Estatística Simples (Univariada):</strong> Consiste em substituir o dado faltante por uma medida de tendência central calculada sobre os dados observados. Para variáveis contínuas, frequentemente utilizamos a <strong>média</strong> ou a <strong>mediana</strong> (sendo a mediana mais segura caso existam valores extremos). Para variáveis categóricas, utilizamos a <strong>moda</strong>. Embora rápida, a imputação simples reduz artificialmente a variância dos dados e ignora a incerteza associada ao valor ausente.</li>
+<li><strong>Imputação Multivariada:</strong> Utiliza as relações entre diferentes variáveis do conjunto de dados para estimar os valores ausentes. Em vez de imputar cada variável de forma independente, o método utiliza as demais variáveis disponíveis como preditoras, podendo realizar esse processo de forma iterativa. O <code>IterativeImputer</code> do <em>scikit-learn</em> implementa essa abordagem, estimando cada variável incompleta a partir das outras e repetindo o processo por múltiplas iterações.</li>
+<li><strong>Imputação Múltipla:</strong> Consiste na criação de diferentes versões do conjunto de dados, preenchendo os valores ausentes com estimativas baseadas nas demais variáveis disponíveis. Em vez de atribuir um único valor ao dado faltante, o método gera múltiplas possibilidades, permitindo representar melhor a incerteza envolvida na imputação. É uma abordagem mais robusta que a imputação simples, especialmente quando há uma quantidade significativa de dados ausentes. O método MICE (<em>Multiple Imputation by Chained Equations</em>) será explicado em mais detalhes nos subtópicos a seguir.</li>
+</ul>
+<p>Também, é fundamental <strong>conhecer a ferramenta</strong> que você está utilizando. Algoritmos baseados em <strong>cálculo de distância geométrica</strong> (como K-Vizinhos mais Próximos - KNN, Máquinas de Vetores de Suporte - SVM e PCA) <strong>não possuem suporte nativo a dados faltantes</strong> e falharão se não houver um tratamento prévio dos valores ausentes. </p>
+<p>Por outro lado, algoritmos modernos <strong>baseados em árvores de decisão</strong> e <em>boosting</em> (como o XGBoost) possuem recursos matemáticos integrados para <strong>lidar diretamente com valores ausentes</strong> durante o treinamento e teste, separando-os em ramificações específicas sem necessidade de imputação prévia.</p>
+<h3 id="mecanismos-de-ausencia">Mecanismos de Ausência</h3>
+<p>Para ir além das limitações da imputação simples, é necessário compreender o mecanismo que gerou a ausência nos dados. A teoria estatística divide a ausência em três categorias principais:</p>
+<h4 id="mcar-missing-completely-at-random"><strong>MCAR</strong> (<em>Missing Completely at Random</em>)</h4>
+<p>A probabilidade de um dado estar ausente é completamente independente tanto dos valores observados quanto dos que não foram observados. A ausência ocorre sem relação sistemática com as características dos dados.</p>
+<p align="center">$P(R \mid Y_{obs}, Y_{mis}) = P(R)$</p>
+
+<ul>
+<li><strong>Exemplo:</strong> Um sensor apresenta um mau funcionamento aleatório e deixa de registrar algumas medições, independentemente do valor que deveria ser registrado.</li>
+</ul>
+<h4 id="mar-missing-at-random"><strong>MAR</strong> (<em>Missing at Random</em>)</h4>
+<p>A probabilidade de um dado estar ausente depende de <strong>outras variáveis observadas</strong>, mas, uma vez consideradas essas variáveis, não depende do próprio valor que está ausente.</p>
+<p align="center">$P(R \mid Y_{obs}, Y_{mis}) = P(R \mid Y_{obs})$</p>
+
+<ul>
+<li><strong>Exemplo:</strong> A variável "Renda" possui valores ausentes com maior frequência em determinados grupos de idade. Se a idade está disponível na base, podemos utilizá-la para modelar e prever a distribuição dos valores ausentes de renda.</li>
+</ul>
+<h4 id="mnar-missing-not-at-random"><strong>MNAR</strong> (<em>Missing Not at Random</em>)</h4>
+<p>A probabilidade de ausência depende do <strong>próprio valor que está ausente</strong>, mesmo após considerar as demais variáveis. A imputação tradicional aqui pode produzir estimativas enviesadas.</p>
+<p align="center">$P(R \mid Y_{obs}, Y_{mis}) \neq P(R \mid Y_{obs})$</p>
+
+<ul>
+<li><strong>Exemplo:</strong> Indivíduos com renda muito elevada têm maior probabilidade de não declarar sua renda justamente por ela ser alta. O próprio valor desconhecido influencia a ausência.</li>
+</ul>
+<h3 id="imputacao-univariada-vs-multivariada">Imputação Univariada vs. Multivariada</h3>
+<p>Quando decidimos preencher os dados faltantes matematicamente (cenários MCAR e MAR), podemos adotar duas abordagens principais em relação à dimensionalidade da análise:</p>
+<ul>
+<li><strong>Imputação Univariada:</strong> Analisa de forma estritamente isolada apenas a coluna que possui o dado faltante. O exemplo clássico é substituir todos os nulos pela média ou mediana daquela mesma variável. Embora seja uma técnica rápida, ela ignora as relações com outras colunas e reduz artificialmente a variância global dos dados.</li>
+<li><strong>Imputação Multivariada:</strong> Utiliza o conjunto de dados como um ecossistema. Em vez de olhar apenas para uma coluna, o algoritmo utiliza as <strong>demais variáveis disponíveis como preditoras</strong> para estimar o valor ausente. É uma técnica muito mais sofisticada e recomendada, pois preserva as correlações naturais e a variância do conjunto de dados.</li>
+</ul>
+<h3 id="imputacao-multipla-e-o-algoritmo-mice">Imputação Múltipla e o Algoritmo MICE</h3>
+<p>O padrão-ouro no pré-processamento para lidar com dados faltantes de forma multivariada é a <strong>Imputação Múltipla</strong> (<em>Multiple Imputation</em>). </p>
+<p>Em abordagens simples (como preencher com a média), tapamos a lacuna com um único valor estático, o que gera uma falsa sensação de certeza para o modelo. A imputação múltipla corrige isso gerando <span class="arithmatex">\(m\)</span> valores plausíveis para cada dado faltante, produzindo <span class="arithmatex">\(m\)</span> versões diferentes e completas do seu conjunto de dados. Ao final do processo analítico, os resultados dessas múltiplas bases são combinados (<em>pooling</em>), refletindo matematicamente a verdadeira incerteza introduzida pelos dados ausentes.</p>
+<p>Para realizar esse processo na prática, a ferramenta mais utilizada no mercado é o <strong>MICE</strong> (<em>Multivariate Imputation by Chained Equations</em>). </p>
+<p><strong>Qual a diferença entre eles?</strong></p>
+<p>A <em>Imputação Múltipla</em> é a <strong>metodologia estatística</strong> conceitual de gerar e combinar várias bases para tratar a incerteza; o <em>MICE</em> é o <strong>algoritmo prático</strong> (código) utilizado para calcular e preencher essas bases.</p>
+<p><strong>Como o MICE funciona?</strong></p>
+<p>O algoritmo aplica o conceito de imputação multivariada de forma encadeada. Ele isola uma variável incompleta e utiliza todas as outras colunas da base para treinar um modelo de regressão e prever os espaços em branco. Em seguida, ele passa para a próxima variável incompleta e repete o processo. Esse ciclo é refeito por várias iterações (iterativo) até que as predições de todas as colunas se estabilizem, gerando bases imputadas altamente coerentes com a realidade.</p>
+<p>Veja o vídeo a seguir para entender visualmente uma iteração do ciclo de imputação MICE.</p>
+<div class="video-wrapper">
+  <iframe src="https://www.youtube.com/embed/zX-pacwVyvU" title="Multiple Imputation by Chained Equations (MICE)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p><em>Vídeo original pelo usuário </em><em>philip9876</em><em> no <a href="https://youtu.be/zX-pacwVyvU">YouTube</a>.</em></p>
+<hr />
+<h2 id="escalonamento-e-padronizacao-de-atributos">Escalonamento e Padronização de Atributos</h2>
+<p>Uma vez que lidamos com as lacunas, precisamos olhar para as grandezas numéricas.</p>
+<blockquote>
+<p>"Uma das transformações mais importantes que você deve aplicar em seus dados chama-se feature scaling. Salvo alguns poucos casos, os algoritmos de Aprendizado de Máquina não apresentam bom desempenho quando os atributos numéricos de entrada possuem escalas muito diferentes."</p>
+<p><a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Hands-on Machine Learning with Scikit-Learn, Keras &amp; TensorFlow, pg. 69 - Aurélien Géron, O'Reilly (2019)</a></p>
+</blockquote>
+<p>Imagine que estamos prestando prever a aprovação de crédito usando duas variáveis preditoras: a <code>idade</code> (variando de 18 a 80 anos) e a <code>renda anual</code> (variando de 15.000 a 200.000 reais).</p>
+<blockquote>
+<p>"Dado que o classificador KNN prevê a classe identificando as observações mais próximas, a escala das variáveis importa. Qualquer variável em grande escala terá um impacto muito maior na distância."</p>
+<p><a href="https://www.statlearning.com/">An Introduction to Statistical Learning, pg. 165 - Gareth James et al., Springer (2013)</a></p>
+</blockquote>
+<p>Nesse cenário, <strong>algoritmos que calculam distâncias geométricas sofrerão distorções severas</strong>. A variável de renda anual dominará artificialmente a métrica de distância devido à sua amplitude; o algoritmo considerará erroneamente que uma diferença de 1.000 reais é infinitamente mais importante do que 20 anos de vida.</p>
+<p>Para evitar isso, aplicamos técnicas de transformação para encaixar os dados em escalas amigáveis. Assim, os modelos convergem com mais facilidade. </p>
+<p><em>Imagem extraída de <a href="https://www.geeksforgeeks.org/machine-learning/standardscaler-minmaxscaler-and-robustscaler-techniques-ml/">GeeksforGeeks</a>.</em></p>
+<p><img width=1000 src="https://media.geeksforgeeks.org/wp-content/uploads/20250418115633045690/scaling-o.webp" alt="Gráfico das diferenças dos métodos de escalonamento e padronização"/></p>
+<h3 id="padronizacao-z-score-standardization">Padronização Z-score (Standardization)</h3>
+<p>Técnica de escalonamento mais utilizada na indústria. O seu objetivo é centralizar os dados, forçando-os a ter uma <strong>média aritmética igual a zero</strong> (<span class="arithmatex">\(\mu = 0\)</span>) e um <strong>desvio padrão igual a um</strong> (<span class="arithmatex">\(\sigma = 1\)</span>). </p>
+<p>Geometricamente, essa transformação desloca a distribuição para o centro do eixo coordenado, mas preserva a forma original da curva. É a escolha ideal para algoritmos que assumem que os dados de entrada seguem uma distribuição Gaussiana.</p>
+<div class="arithmatex">\[x_{scaled} = \frac{x - \mu}{\sigma}\]</div>
+<p><em>Nota: A padronização não impõe limite rígido aos valores máximos e mínimos. Extremos continuarão existindo representados como desvios padrão distantes da média.</em></p>
+<h3 id="escalonamento-min-max-normalization">Escalonamento Min-Max (Normalization)</h3>
+<p>Não se preocupa com a média ou com o desvio padrão. O objetivo do <code>MinMaxScaler</code> é espremer todos os dados para que caibam dentro de um intervalo fixo, que por padrão é <strong>entre 0 e 1</strong>. O menor valor observado recebe o valor <span class="arithmatex">\(0\)</span> e o maior recebe o valor <span class="arithmatex">\(1\)</span>.</p>
+<div class="arithmatex">\[x_{scaled} = \frac{x - x_{min}}{x_{max} - x_{min}}\]</div>
+<p><em>Atenção: Altamente sensível a outliers. Se houver um erro de digitação na base (ex: idade 999), ele será o valor 1.0, e todas as idades reais serão espremidas próximas ao 0.</em></p>
+<h3 id="escalonamento-pelo-valor-absoluto-maximo">Escalonamento pelo Valor Absoluto Máximo</h3>
+<p>O <code>MaxAbsScaler</code> apenas divide cada número pelo maior valor absoluto encontrado na coluna, contendo os dados no intervalo de <strong>[-1, 1]</strong>.</p>
+<p>A grande vantagem de não realizar subtrações é que <strong>ele não destrói a esparsidade dos dados</strong>. Um valor zero continuará sendo zero após a transformação; preservando a integridade de matrizes muito esparsas.</p>
+<div class="arithmatex">\[x_{scaled} = \frac{x}{\max(\vert{}x\vert{})}\]</div>
+<h3 id="escalonamento-robusto">Escalonamento Robusto</h3>
+<p>Técnicas que dependem da média ou do valor máximo falham quando a base possui valores extremos. O <code>RobustScaler</code> subtrai a <strong>mediana</strong> (<span class="arithmatex">\(Q_2\)</span>), independentemente dos extremos, e divide pelo <strong>intervalo interquartil (IQR)</strong>. A massa principal dos dados é escalonada corretamente e os outliers são isolados.</p>
+<div class="arithmatex">\[x_{scaled} = \frac{x - Q_2}{Q_3 - Q_1}\]</div>
+<p>Para entender visualmente as diferenças geométricas entre normalização e padronização, confira:</p>
+<div class="video-wrapper">
+  <iframe width="800" src="https://www.youtube.com/embed/sxEqtjLC0aM" title="Standardization vs Normalization Clearly Explained!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<p><em>Vídeo original por </em><em>Normalized Nerd</em><em> no <a href="https://www.youtube.com/sxEqtjLC0aM">YouTube</a>.</em></p>
+<h2 id="codificacao-de-variaveis-categoricas">Codificação de Variáveis Categóricas</h2>
+<p>Como os modelos processam apenas números, precisamos traduzir <strong>variáveis qualitativas</strong> para representações numéricas. Elas dividem-se em dois tipos: </p>
+<ul>
+<li><strong>Ordinais:</strong> Possuem hierarquia lógica (ex: escolaridade ou avaliações "ruim, médio, bom").</li>
+<li><strong>Nominais:</strong> Não possuem relação de ordem (ex: cores ou nomes de países).</li>
+</ul>
+<p><strong>Como transformá-las?</strong></p>
+<ul>
+<li><strong>Codificação ordinal:</strong> Converte cada categoria em um valor inteiro sequencial (ruim = 1, médio = 2, bom = 3).</li>
+<li><strong>One-hot encoding:</strong> Cria uma nova coluna binária (0 ou 1) para cada categoria possível da variável. </li>
+</ul>
+<p>Precisamos evitar a armadilha das variáveis <em>dummy</em> (a multicolinearidade perfeita). Se uma variável possui <span class="arithmatex">\(C\)</span> categorias, a soma de suas colunas binárias será sempre previsível, quebrando cálculos de modelos lineares. Por isso, <strong>removemos sempre uma categoria</strong>, utilizando <span class="arithmatex">\(C-1\)</span> colunas; a categoria omitida torna-se a <em>baseline</em> de comparação do modelo.</p>
+<p>Considere a codificação do atributo <code>sexo</code>, assumindo os valores <code>masculino</code> ou <code>feminino</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pessoa</th>
+<th style="text-align: center;">Masculino</th>
+<th style="text-align: center;">Feminino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">B</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">C</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Perceba que a soma das colunas assumirá sempre o valor <span class="arithmatex">\(1\)</span>. A codificação correta com o drop de uma coluna (neste caso, a feminina) fica assim:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pessoa</th>
+<th style="text-align: center;">Masculino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">B</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">C</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>O valor zero agora nos diz tacitamente que o indivíduo pertence à classe removida. Essa abordagem se aplica a qualquer cardinalidade no <em>one-hot encoding</em>.</p>
+<p>Quando lidamos com alta cardinalidade (uma variável com milhares de classes únicas), o processo criaria milhares de colunas, explodindo a dimensionalidade. Nesses casos, aplicamos o <strong>agrupamento de raras</strong>, fundindo categorias de baixíssima frequência em uma única classe "Outros"; ou codificações avançadas como o <em>target encoding</em>.</p>
+<h2 id="deteccao-e-tratamento-de-outliers-e-ruidos">Detecção e Tratamento de Outliers e Ruídos</h2>
+<p>O último pilar do pré-processamento é garantir que pontos excepcionalmente bizarros não distorçam a visão do modelo. </p>
+<p><strong>Outliers são observações que se desviam drasticamente do padrão natural da amostra</strong>. Podem surgir por falhas de medição, erros humanos ou eventos legítimos raros. O impacto é severo; inflam métricas de erro (<span class="arithmatex">\(RMSE\)</span>) e reduzem a capacidade preditiva em algoritmos sensíveis à variância.</p>
+<p>Para análise, atentamo-nos ao <strong>Intervalo Interquartil (IQR)</strong>. Consideramos discrepante qualquer valor abaixo do limite inferior (<span class="arithmatex">\(Q_1 - 1.5 \times IQR\)</span>) ou acima do superior (<span class="arithmatex">\(Q_3 + 1.5 \times IQR\)</span>). Gráficos de <em>boxplot</em> são excelentes ferramentas visuais para essa detecção.</p>
+<p><em>Imagem extraída de <a href="https://fernandafperes.com.br/blog/interpretacao-boxplot/">https://fernandafperes.com.br/blog/interpretacao-boxplot/</a>.</em></p>
+<p><img width=600 src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffernandafperes.com.br%2Fblog%2Finterpretacao-boxplot%2Fg2.png&f=1&nofb=1&ipt=f189d1d4cff722cdf9ec3a98566e9959e84ae3c4047244dc2fefa2689cd310a5" alt="Explicação visual do gráfico boxplot"/></p>
+<p><strong>Estratégias de Mitigação (Tratamento):</strong></p>
+<ul>
+<li><strong>Remoção justificada:</strong> Exclusão da linha apenas quando for inequivocamente comprovado que a observação é erro de coleta (ex: pessoa com 999 anos).</li>
+<li><strong>Truncamento (<em>winsorization</em>):</strong> Limitação estatística fixando valores extremos a um teto ou piso. Exemplo: qualquer idade acima de 90 anos passa a ser registrada fixamente como 90.</li>
+<li><strong>Transformações:</strong> Aplicação de logaritmo para comprimir a escala dos dados. Reduz o impacto matemático de grandes valores sem removê-los, útil em variáveis com forte assimetria (renda, faturamento).</li>
+</ul>
+<hr />
+<p><a href="../_03_avaliacao_generalizacao/GUIA.md">Próximo →</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../configs/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
