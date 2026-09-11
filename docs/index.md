@@ -17,7 +17,7 @@ Bem-vindo ao repositório do curso! Este `index.md` servirá como o seu mapa int
     - Aprendizado por Reforço
 - **Tipos de Variáveis e Predição**
 
-### [Módulo 2: Dados e Pré-processamento](./_02_dados_e_preprocessamento/GUIA.md) (em desenvolvimento)
+### [Módulo 2: Dados e Pré-processamento](./_02_dados_e_preprocessamento/GUIA.md)
 #### Tópicos
 - **Introdução**
     - Garbage-In/Garbage-Out
