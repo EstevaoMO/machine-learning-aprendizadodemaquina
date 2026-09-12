@@ -14,16 +14,17 @@ Para uma imersão completa na fundamentação teórica, acesse o guia correspond
   Exemplificação gráfica de conceitos de análise exploratória e guia para formulação de hipóteses.
 
 ## Módulo 2: Dados e Pré-processamento
-* **[Imputação Univariada vs. Multivariada](https://colab.research.google.com/github/EstevaoMO/machine-learning-aprendizadodemaquina/blob/main/02_dados_e_preprocessamento/colabs/Imputa%C3%A7%C3%A3o_Univariada_vs_Multivariada.ipynb)**
+
+* **[Imputação Univariada vs. Multivariada](https://colab.research.google.com/github/EstevaoMO/machine-learning-aprendizadodemaquina/blob/main/02_dados_e_preprocessamento/colabs/Imputa%C3%A7%C3%A3o_Univariada_vs_Multivariada.ipynb)**  
   Explicação dos casos de uso dos dois tipos distintos de imputação de dados, e baterias de testes em múltiplos casos; inclusive em suas aplicações errôneas.
 
-* **[Escalonamento e Padronização de Dados](https://colab.research.google.com/github/EstevaoMO/machine-learning-aprendizadodemaquina/blob/main/02_dados_e_preprocessamento/colabs/Escalonamento_e_Padroniza%C3%A7%C3%A3o_de_Dados.ipynb)**
+* **[Escalonamento e Padronização de Dados](https://colab.research.google.com/github/EstevaoMO/machine-learning-aprendizadodemaquina/blob/main/02_dados_e_preprocessamento/colabs/Escalonamento_e_Padroniza%C3%A7%C3%A3o_de_Dados.ipynb)**  
   Apresentando os diversos tipos de escalonamento e padronização de dados e as situações favoráveis para cada implementação, distribuições favoráveis e incremento da qualidade dos modelos a partir desses ajustes. Há também uma certa explicação sobre outliers e simples tratamentos por escalonamento.
 
-* **[Codificação de Variáveis Categóricas](https://colab.research.google.com/github/EstevaoMO/machine-learning-aprendizadodemaquina/blob/main/02_dados_e_preprocessamento/colabs/Codifica%C3%A7%C3%A3o_de_Vari%C3%A1veis_Categ%C3%B3ricas.ipynb)**
+* **[Codificação de Variáveis Categóricas](https://colab.research.google.com/github/EstevaoMO/machine-learning-aprendizadodemaquina/blob/main/02_dados_e_preprocessamento/colabs/Codifica%C3%A7%C3%A3o_de_Vari%C3%A1veis_Categ%C3%B3ricas.ipynb)**  
   Critérios de escolha entre Ordinal Encoding e One-Hot Encoding, validação empírica de hipóteses de ordenação, efeitos da alta dimensionalidade e da ausência de escalonamento em modelos baseados em distância, experimentos comparativos com o dataset `tips`.
 
-* **[Detecção e Tratamento de Outliers](https://colab.research.google.com/github/EstevaoMO/machine-learning-aprendizadodemaquina/blob/main/02_dados_e_preprocessamento/colabs/Tratamento_de_Outliers.ipynb)**
+* **[Detecção e Tratamento de Outliers](https://colab.research.google.com/github/EstevaoMO/machine-learning-aprendizadodemaquina/blob/main/02_dados_e_preprocessamento/colabs/Tratamento_de_Outliers.ipynb)**  
   Fundamentação matemática da cerca de Tukey e do IQR, limitações da remoção automática, transformação logarítmica e RobustScaler como alternativas de tratamento, comparativo quantitativo entre três estratégias sobre o dataset `mpg`.
 
 ## Módulo 3: Avaliação de Modelos e Generalização
