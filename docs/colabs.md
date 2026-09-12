@@ -21,10 +21,11 @@ Para uma imersão completa na fundamentação teórica, acesse o guia correspond
   Apresentando os diversos tipos de escalonamento e padronização de dados e as situações favoráveis para cada implementação, distribuições favoráveis e incremento da qualidade dos modelos a partir desses ajustes. Há também uma certa explicação sobre outliers e simples tratamentos por escalonamento.
 
 * **[Codificação de Variáveis Categóricas](https://colab.research.google.com/github/EstevaoMO/machine-learning-aprendizadodemaquina/blob/main/02_dados_e_preprocessamento/colabs/Codifica%C3%A7%C3%A3o_de_Vari%C3%A1veis_Categ%C3%B3ricas.ipynb)**
-  Critérios de escolha entre Ordinal Encoding e One-Hot Encoding, validação empírica de hipóteses de ordenação, efeitos da alta dimensionalidade e da ausência de escalonamento em modelos baseados em distância — experimentos comparativos com o dataset `tips`.
+  Critérios de escolha entre Ordinal Encoding e One-Hot Encoding, validação empírica de hipóteses de ordenação, efeitos da alta dimensionalidade e da ausência de escalonamento em modelos baseados em distância, experimentos comparativos com o dataset `tips`.
 
 * **[Detecção e Tratamento de Outliers](https://colab.research.google.com/github/EstevaoMO/machine-learning-aprendizadodemaquina/blob/main/02_dados_e_preprocessamento/colabs/Tratamento_de_Outliers.ipynb)**
-  Fundamentação matemática da cerca de Tukey e do IQR, limitações da remoção automática, transformação logarítmica e RobustScaler como alternativas de tratamento — comparativo quantitativo entre três estratégias sobre o dataset `mpg`.
+  Fundamentação matemática da cerca de Tukey e do IQR, limitações da remoção automática, transformação logarítmica e RobustScaler como alternativas de tratamento, comparativo quantitativo entre três estratégias sobre o dataset `mpg`.
+
 ## Módulo 3: Avaliação de Modelos e Generalização
 * 
 
